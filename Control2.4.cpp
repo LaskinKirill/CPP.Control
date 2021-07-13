@@ -3,22 +3,7 @@
 
 using namespace std;
 
-string shooting(double result) {
-    string str;
-    if (result >= 50) {
-        str = "sniper";
-        cout << str << endl;
-    }
-    else if (50 > result >= 25) {
-        str = "shooter";
-        cout << str << endl;
-    }
-    else if (25 > result) {
-        str = "youngshooter";
-        cout << str << endl;
-    }
-    return str;
-}
+
 
 int main()
 {
@@ -36,20 +21,34 @@ int main()
             score = 5;
             cout << "score = " << score << endl;
         }
-        else if (4 < (x * x + y * y) <= 16) {
+        else if (4 < (x * x + y * y) && (x * x + y * y) <= 16) {
             score = 2;
             cout << "score = " << score << endl;
         }
-        else if (16 < (x * x + y * y) <= 36) {
+        else if (16 < (x * x + y * y) && (x * x + y * y) <= 36) {
             score = 1;
             cout << "score = " << score << endl;
         }
+        
         result = result + score;
         
     }
 
-    rating = shooting(result);
-    cout << rating << endl;
     cout << "result = " << result << endl;
+    string str;
+    if (result >= 50) {
+        str = "sniper";
+        cout << str << endl;
+    }
+    else if (50 > result && result >= 25) {
+        str = "shooter";
+        cout << str << endl;
+    }
+    else if (25 > result) {
+        str = "youngshooter";
+        cout << str << endl;
+    }
+    
+        
     return 0;
 }
