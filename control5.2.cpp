@@ -9,7 +9,7 @@ int main()
 	int const kc = sizeof(a) / sizeof(a[0]);
 	//Количество элементов массива
 	//int c[kc] = { 0 };
-	int* c = new int[kc];
+	int* c;
 	c = max_vect(kc, a, b); //вызов функции для создания массива
 	for (int i = 0; i < kc; i++) //Вывод результата.
 		cout << c[i] << " ";
@@ -19,7 +19,7 @@ int main()
 
 int*  max_vect(int const kc, int *a, int *b) {
 	int const k = sizeof(a) / sizeof(a[0]);
-	int *c = new int[k];
+	int* c = new int[kc];
 	for (int i = 0; i < kc; i++) {
 		if (a[i] >= b[i]) {
 			c[i] = a[i];
