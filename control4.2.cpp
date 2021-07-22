@@ -1,31 +1,25 @@
 #include <iostream>
-#include <math.h>
 
-using namespace std;
-bool Input(int a, int b) {	
-	
-		int x, y;
-		cout << "input x and y " << endl;
-		cin >> x;
-		cin >> y;
-
-		if (x != a || y != b)
-			return false;
-		else
-			return true;
+bool Input(int a, int b)
+{
+	std::cout << "enter a:";
+	std::cin >> a;
+	std::cout << "enter b:";
+	std::cin >> b;
+	if ((a > 0 && a != NULL) && (b < 0 && b != NULL))
+		return true;
+	else
+		return false;
 }
+
 int main()
 {
 	int a, b;
-	cout << "Input a, b " << endl;
-	cin >> a;
-	cin >> b;
 	if (Input(a, b) == false) // if(!Input(a,b))
 	{
-		cerr << "error";
+		std::cerr << "error";
 		return 1;
 	}
 	int s = a + b;
-	cout << "s = " << s << endl;
 	return 0;
 }
